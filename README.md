@@ -1,14 +1,14 @@
 Diffusion Models for content generation are exciting as hell. In this project, I created a fake face generation model that one could practically train on a personal computer. Just as most of us entered the realm of deep learning with the MNIST project, for me this project serves as a starting point for content generation models. 
 
-I'm running an RTX 3060 on my PC, and I scraped 30,000 fake face images from <a href="https://thispersondoesnotexist.com/">thispersondoesnotexist</a> to train my model. Here's what they look like
+I'm running RTX 3060 on my PC, and I scraped 30,000 fake face images from <a href="https://thispersondoesnotexist.com/">thispersondoesnotexist</a> to train my model. Here's what they look like
 
 ![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-1.png?raw=true)
 
-The gist of diffusion models is essentially forward and backward diffusion processes. We turn images into pure noise by forward diffusion, and use a backward diffusion process to turn random noise into images. Our neural network is used in the backward diffusion process. Instead of learning about images like in GANs, our model learn about noise distribution and how to reerse them.
+The gist of diffusion models is essentially forward and backward diffusion processes. We turn images into pure noise by forward diffusion, and use a backward diffusion process to turn random noise into images. Our neural network is used in the backward diffusion process. Instead of learning about images like in GANs, our model learn about noise distribution and how to clear out said noise.
 
 We start with the forward diffusion process, which gradually adds random noise to an image, making it a complete image of noise by the end of certain amount of timestep. This is a Markov process, where the state of the current image depends only on the previous image. We denote the process as q.
 $$
-q(x_{i:T}|x_0)=\prod_{t=a}^{T} q(x_t|x_t-1) 
+q(x_{i:T}|x_0)=\prod_{t=a}^{T} q(x_t|x_t-1)
 $$
 Where x<sub>0</sub> = original image, T = total time step. And x<sub>1</sub> to x<sub>T</sub> are more and more noisy version of x<sub>0</sub>.
 
