@@ -46,5 +46,7 @@ q(x_t|x_{t-1})&=\sqrt{1-{{\beta}_t}}x_{t-1}+\sqrt{{\beta}_t}\epsilon \\
 \end{align*}
 $$
 
-This formula gives us the ability to calculate the noised image at any time step, which allows us to not have to loop over each timestep a.k.a O(N) to O(1)
+This formula gives us the ability to calculate the noised image at any time step, which allows us to not have to loop over each timestep a.k.a O(N) to O(1). Here's what forward diffusion process looks like on an actual image
+
+![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-2.png?raw=true)
 
