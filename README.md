@@ -14,10 +14,11 @@ Where x<sub>0</sub> = original image, T = total time step. And x<sub>1</sub> to 
 
 The way noise is sampled at time t is described by 
 $$
+
 \begin{align*}
 q(x_t|x_{t-1}) &=N(x_t;\sqrt{1-{\beta}_t}x_{t-1}, {{\beta}_t}I) \\
 &=\sqrt{1-{{\beta}_t}}x_{t-1}+\sqrt{{\beta}_t}\epsilon
-\end{align*}
+\end{align*}
 $$
 
 $$
@@ -27,11 +28,18 @@ $$
 Variance at time t is basically how much noise we'd like to generate. Further, we define the following
 $$
 {\alpha}_t=1-{\beta}_t \\
+{\overline{{\alpha}}_t} = \prod_{i=1}^{t} {\alpha}_t \\{\alpha}_t=1-{\beta}_t \\
 {\overline{{\alpha}}_t} = \prod_{i=1}^{t} {\alpha}_t \\
 $$
 Combining this into our definition of q, we have
 $$
 \begin{align*}
+q(x_t|x_{t-1})&=\sqrt{1-{{\beta}_t}}x_{t-1}+\sqrt{{\beta}_t}\epsilon \\
+&=\sqrt{{\alpha}_t}x_{t-1}+\sqrt{1-{\alpha}_t}\epsilon \\
+&=\sqrt{{\alpha}_t{\alpha}_{t-1}}x_{t-2}+\sqrt{1-{\alpha}_t{\alpha}_{t-1}}\epsilon \\
+&=\sqrt{{\alpha}_t{\alpha}_{t-1}{\alpha}_{t-2}}x_{t-3}+\sqrt{1-{\alpha}_t{\alpha}_{t-1}{\alpha}_{t-2}}\epsilon \\
+&=\sqrt{\overline{{\alpha}}_t}x_0+\sqrt{1-\overline{{\alpha}}_t}\epsilon \\
+\end{align*}\begin{align*}
 q(x_t|x_{t-1})&=\sqrt{1-{{\beta}_t}}x_{t-1}+\sqrt{{\beta}_t}\epsilon \\
 &=\sqrt{{\alpha}_t}x_{t-1}+\sqrt{1-{\alpha}_t}\epsilon \\
 &=\sqrt{{\alpha}_t{\alpha}_{t-1}}x_{t-2}+\sqrt{1-{\alpha}_t{\alpha}_{t-1}}\epsilon \\
