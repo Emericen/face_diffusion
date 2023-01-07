@@ -10,22 +10,14 @@ We start with the forward diffusion process, which gradually adds random noise t
 $$
 {q(x_{i:T}|x_0)=\prod_{t=a}^{T} q(x_t|x_t-1)}
 $$
-
-$$
-{q(x_{i:T}|x_0)=\prod_{t=a}^{T} q(x_t|x_t-1)}
-$$
-
-
 Where x<sub>0</sub> = original image, T = total time step. And x<sub>1</sub> to x<sub>T</sub> are more and more noisy version of x<sub>0</sub>.
 
 The way noise is sampled at time t is described by 
 $$
-\begin{equation}
 \begin{align*}
 q(x_t|x_{t-1}) &=N(x_t;\sqrt{1-{\beta}_t}x_{t-1}, {{\beta}_t}I) \\
 &=\sqrt{1-{{\beta}_t}}x_{t-1}+\sqrt{{\beta}_t}\epsilon
 \end{align*}
-\end{equation}
 $$
 
 $$
