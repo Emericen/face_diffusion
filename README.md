@@ -24,8 +24,10 @@ $$
 Variance at time t is basically how much noise we'd like to generate. Further, we define the following
 
 $$
-{\alpha}_t=1-{\beta}_t \\
-{\overline{{\alpha}}_t} = \prod_{i=1}^{t} {\alpha}_t \\
+\begin{align*}
+&{\alpha}_t=1-{\beta}_t \\
+&{\overline{{\alpha}}_t} = \prod_{i=1}^{t} {\alpha}_t
+\end{align*}
 $$
 
 Combining this into our definition of q, we have
@@ -44,3 +46,8 @@ This formula gives us the ability to calculate the noised image at any time step
 
 ![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-2.png?raw=true)
 
+I trained for 50 epochs on the previously mentioned 30,000 face images, which took about 6 to 7 hours. I also sampled the image generation process every 5 epochs to observe the training progression. Here's what it looks like
+
+![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-3.jpg?raw=true)
+
+And here are some images it can generate after the 50-epoch training
