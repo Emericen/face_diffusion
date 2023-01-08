@@ -2,7 +2,7 @@ Diffusion Models for content generation are exciting as hell. In this project, I
 
 I'm running RTX 3060 on my PC, and I scraped 30,000 fake face images from <a href="https://thispersondoesnotexist.com/">thispersondoesnotexist</a> to train my model. Here's what they look like
 
-![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-1.png?raw=true)
+<img src="https://github.com/Emericen/face_diffusion/blob/master/assets/demo-1.png?raw=true" alt="alt text z" style="zoom:50%;" />
 
 The gist of diffusion models is essentially forward and backward diffusion processes. We turn images into pure noise by forward diffusion, and use a backward diffusion process to turn random noise into images. Our neural network is used in the backward diffusion process. Instead of learning about images like in GANs, our model learn about noise distribution and how to clear out said noise.
 
@@ -44,15 +44,15 @@ $$
 
 This formula gives us the ability to calculate the noised image at any time step, which allows us to not have to loop over each timestep a.k.a O(N) to O(1). Here's what forward diffusion process looks like on an actual image
 
-![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-2.png?raw=true)
+<img src="https://github.com/Emericen/face_diffusion/blob/master/assets/demo-2.png?raw=true" alt="alt text z" style="zoom:50%;" />
 
 I trained for 50 epochs on the previously mentioned 30,000 face images, which took about 6 to 7 hours. I also sampled the image generation process every 5 epochs to observe the training progression. Here's what it looks like
 
-![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-3.jpg?raw=true)
+<img src="https://github.com/Emericen/face_diffusion/blob/master/assets/demo-3.jpg?raw=true" alt="alt text z" style="zoom:50%;" />
 
 And here are some images it can generate after the 50-epoch training
 
-![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-4.jpg?raw=true)
+<img src="https://github.com/Emericen/face_diffusion/blob/master/assets/demo-4.jpg?raw=true" alt="alt text z" style="zoom:50%;" />
 
 Again, keep in mind that this is only a starting point for these types of generative diffusion models. There are many improvements to the current version; some of the ones I can quickly think of include
 <ul>
