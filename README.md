@@ -51,3 +51,16 @@ I trained for 50 epochs on the previously mentioned 30,000 face images, which to
 ![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-3.jpg?raw=true)
 
 And here are some images it can generate after the 50-epoch training
+
+![alt text](https://github.com/Emericen/face_diffusion/blob/master/assets/demo-4.jpg?raw=true)
+
+Again, keep in mind that this is only a starting point for these types of generative diffusion models. There are many improvements to the current version; some of the ones I can quickly think of include
+<ul>
+<li>More epochs in larger batches with more powerful hardware</li>
+<li>Using bigger U-Nets</li>
+<li>Adding Residual Blocks</li>
+<li>Incorporating Attention Unit</li>
+<li>Adding other conditionals such as text descriptions</li>
+</ul>
+
+That being said, considering the small amount of effort I made in creating this model versus what it can do, I think we've seen the efficacy of diffusion models.
